@@ -6,6 +6,11 @@ import Registration from './pages/Registration.jsx'
 import Login from './pages/Login.jsx'
 import Navbar from './pages/Navbar.jsx'
 import HomePage from './pages/Homapage.jsx'
+import Livraison from './pages/Livraison.jsx'
+import Promotion from './pages/Promotion.jsx'
+import Nouveaute from './pages/Nouveaute.jsx'
+import Services from './pages/Services.jsx'
+import Aide from './pages/Aide.jsx'
 
 let router = createBrowserRouter([
   {
@@ -17,12 +22,36 @@ let router = createBrowserRouter([
         element: <HomePage/>
       },
       {
+        path:"/home",
+        element: <HomePage/>
+      },
+      {
         path: "/registration",
         element: <Registration/>
       },
       {
         path: "/login",
         element: <Login/>
+      },
+      {
+        path: "/livraison",
+        element: <Livraison/>
+      },
+      {
+        path: "/promotion",
+        element: <Promotion/>
+      },
+      {
+        path: "/nouveautés",
+        element: <Nouveaute/>
+      },
+      {
+        path: "/services",
+        element: <Services/>
+      },
+      {
+        path: "/besoin",
+        element: <Aide/>
       },
     ]
   }
