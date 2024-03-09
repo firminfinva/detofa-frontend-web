@@ -8,3 +8,8 @@ button{
     background-color: var(--button-color);
     color: var(--button-text-color);
 }
+@media (max-width: 920px) {
+    button{
+        font-size: 8px;
+    }
+ }

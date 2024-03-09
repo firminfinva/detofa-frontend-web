@@ -14,7 +14,7 @@ nav{
     
 }
 .logo{
-    height: 60px;
+    height: clamp(2rem, 1.429rem + 2.857vw, 4rem);
     object-fit: cover;
 }
 .top-nav>form{
@@ -64,3 +64,39 @@ input[type=text]:focus {
     background-color: var(--button-color);
     font-weight: 900;
 }
+@media (max-width: 920px) {
+    .navbar{
+        height: 105px;
+    }
+    .top-nav{
+        height: 75px;
+    }
+    .top-nav>form{
+        width: 40%;
+        height: 30px; 
+        overflow-y: hidden;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 15px;
+    }
+    input{
+        height: 100%;
+        width: 10%;
+        flex-grow: 1;
+    }
+    .top-nav>form>button{
+        height: 100%;
+        min-width: 30px;
+    
+    }
+    .connexion-btns>button{
+        font-size: 8px;
+        height: 30px;
+        width: 50px;
+        padding: 0 5px;
+    }
+    .buttom-nav{
+        height: 30px; 
+    }
+ }

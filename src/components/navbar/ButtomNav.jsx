@@ -8,7 +8,13 @@ import { FaGift } from "react-icons/fa";
 
 
 export default function ButtomNav(){
-    let icanSize = 20
+    let icanSize = 0
+    if(window.innerWidth>920){
+        icanSize = 20
+    }else{
+        icanSize = 15
+    }
+   
     const theBtn = [
         {img: <IoHome size={icanSize}/>,text: "Home"},
         {img: <PiHandbagSimpleFill size={icanSize}/>,text: "Livraison"},
