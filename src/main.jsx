@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {Router, RouterProvider, createBrowserRouter, Route, Routes, BrowserRouter } from 'react-router-dom'
 import Registration from './pages/Registration.jsx'
 import Login from './pages/Login.jsx'
 import Navbar from './pages/Navbar.jsx'
@@ -11,6 +11,8 @@ import Promotion from './pages/Promotion.jsx'
 import Nouveaute from './pages/Nouveaute.jsx'
 import Services from './pages/Services.jsx'
 import Aide from './pages/Aide.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+// import { AuthProvider } from './context/AuthContext.jsx'
 
 let router = createBrowserRouter([
   {
@@ -61,6 +63,9 @@ let router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+ 
   </React.StrictMode>,
 )
