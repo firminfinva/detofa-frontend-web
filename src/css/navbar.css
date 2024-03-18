@@ -1,14 +1,16 @@
 nav{
     position: fixed;
     width: 100vw;
+    z-index: 3;
 }
 .navbar{
-    height: 140px;
+    height: 100px;
+    z-index: 3;
 }
 .top-nav{
-    height: 100px;   
+    height: 70px;   
     display: flex;
-    background-color: rgb(230, 230, 241); 
+    background-color: var(--navbar-color);
     justify-content: space-evenly;
     align-items: center;
     
@@ -70,7 +72,7 @@ input[type=text]:focus {
 .buttom-nav{
     display: flex;
     justify-content: space-between;
-    height: 40px; 
+    height: 30px; 
     gap: 1px;
     background-color: var(--button-text-color);
 }

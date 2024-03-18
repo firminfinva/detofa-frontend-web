@@ -20,7 +20,7 @@ export const AuthProvider = ({children}) => {
 
     let loginUser = async (e)=> {
         e.preventDefault()
-        let response = await fetch(`${baseURL}/api/token/`, {
+            let response = await fetch(`${baseURL}/api/token/`, {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -33,11 +33,9 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(data)
             setUser(jwtDecode(data.access))
             localStorage.setItem("authTokens", JSON.stringify(data))
-            console.log("we here")
-            return True
+            return true
         }else{
-            console.log("we not here")
-            return False
+            return false
         }
     }
 
@@ -61,6 +59,7 @@ export const AuthProvider = ({children}) => {
         console.log('this is the response', response.status)
         if (response.status === 200) {
             // navigate("/login");
+            alert("Welcome to Detofa")
         } else {
      
             alert("Something went wrong!");

@@ -40,36 +40,34 @@ export default function TopNav(){
         {img: <IoMdCart size={icanSize}/>,text: "Panier"},
         // {img: <></>,text: "Deconnecter"},
     ]
-    console.log(theBtn)
     return(
         <div className="top-nav">
-                    <img onClick={goToHome} className="logo" src={Logo} />
-                    <form>
-                        <input value={input} onChange={handleChange} type="text" />
-                        <Button onClick={handleSubmit} type="submit" icon={<CiSearch size="90%"/>}/>
-                    </form>
-                    <div className="connexion-btns">
-                        {!authTokens ?<>
-                            <Button onClick={goToLogin} text="Login"/>
-                       <Button onClick={goToRegistration} text="Registration"/>
-                        </>:
-                        <>
-                          {theBtn.map((btn)=>
-                            <Link to={btn.text} className="connected-btns">
-                                <div>{btn.img}</div>
-                                <Button  key={btn.text}  text={btn.text} />
-                            </Link>
-                          )}
-                          <div className="deconnected-btns">
-                                <div><></></div>
-                                <button className="logout" onClick={()=> logoutUser()}>Deconnexion</button>
-                            </div>
-
-                        </>
-                        }
-                       
+            <img onClick={goToHome} className="logo" src={Logo} />
+            <form>
+                <input value={input} onChange={handleChange} type="text" />
+                <Button onClick={handleSubmit} type="submit" icon={<CiSearch size="90%"/>}/>
+            </form>
+            <div className="connexion-btns">
+                {!authTokens ?<>
+                <Button onClick={goToLogin} text="Login"/>
+                <Button onClick={goToRegistration} text="Registration"/>
+                </>:
+                <>
+                    {theBtn.map((btn)=>
+                        <Link to={btn.text} className="connected-btns">
+                            <div>{btn.img}</div>
+                            <Button  key={btn.text}  text={btn.text} />
+                        </Link>
+                    )}
+                    <div className="deconnected-btns">
+                        <div><></></div>
+                        <button className="logout" onClick={()=> logoutUser()}>Deconnexion</button>
                     </div>
+                </>
+                }
+                       
+             </div>
                     
-                </div>
+        </div>
     )
 }
