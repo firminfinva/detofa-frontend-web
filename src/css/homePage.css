@@ -129,6 +129,7 @@ strong{
 }
 .product-info>button{
     border-radius: 5px;
+    height: 30px;
 }
 .product-info>div{
     display: flex;
@@ -256,7 +257,9 @@ strong{
     .product-info{
         height: auto;
         gap: 15px;
-    
+    }
+    .product-info>button{
+        height: 40px;
     }
     .service-box{
         height: auto;
