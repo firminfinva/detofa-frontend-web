@@ -6,6 +6,7 @@ import Pic3 from "./../assets/homePage3.png"
 import Pic4 from "./../assets/homePage4.png"
 import Product from "../components/homePage/ourProduct/Product"
 import Services from "../components/homePage/Service"
+import Contact from "../components/homePage/Contact"
 
 export default function HomePage(){
     const pics = [{img: Pic1, id:"1"}, {img: Pic2, id:"2"}, {img: Pic3, id:"3"},{img: Pic4, id:"4"}]
@@ -41,7 +42,7 @@ export default function HomePage(){
             
             </div>
             <Services/>
-            
+            <Contact/>
           
     </div>)
 }

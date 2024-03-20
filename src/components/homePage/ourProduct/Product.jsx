@@ -8,7 +8,7 @@ export default function Product(){
             <img src={ProductImg} />
         </div>
         <div className="product-info">
-            <h5 className="category">  <strong>Categorie :</strong>   Product category</h5>
+            <h5 className="category">  <strong>Boutique :</strong>  customize's Boutique</h5>
             <div>
                 <h6>
                    <strong>Name :</strong>  Product name Product 

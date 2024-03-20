@@ -18,8 +18,8 @@ export default function ButtomNav(){
     const theBtn = [
         {img: <IoHome size={icanSize}/>,text: "Home"},
         {img: <PiHandbagSimpleFill size={icanSize}/>,text: "Livraison"},
-        {img: <FaPercent size={icanSize}/>,text: "Promotion"},
-        {img: <FaGift size={icanSize}/>,text: "Nouveautés"},
+        // {img: <FaPercent size={icanSize}/>,text: "Promotion"},
+        // {img: <FaGift size={icanSize}/>,text: "Nouveautés"},
         {img: <GrServices size={icanSize}/>,text: "Services"},
         {img: <RiCustomerService2Line size={icanSize}/>,text: "Besoin"},
     ]
