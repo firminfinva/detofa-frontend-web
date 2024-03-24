@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import AuthContext from "../context/AuthContext"
 import { useNavigate } from "react-router-dom"
+import "./../css/login.css"
 
 export default function Login(){
     const navigate = useNavigate()
@@ -9,20 +10,24 @@ export default function Login(){
         navigate("/")
     }
     return (
-        <div className="main_login">
-            <h1>Se connecter</h1>
-            <form onSubmit={loginUser}>
-                <div className="for-labels">
-                    <label>Téléphone</label>
+        <div className="login">
+            <div className="main_login">
+                <h1>Se connecter</h1>
+                <form className="login-form" onSubmit={loginUser}>
+                  
+                        {/* <div className="for-labels">
+                            <label>Téléphone</label>
+                            <label>Mot de passe</label>
+                        
+                        </div> */}
+              
                     <input type="text" name="phone" placeholder="Enter your phone number" />
-                </div>
-                <div className="for-labels">
-                    <label>Mot de passe</label>
                     <input type="password" name="password" placeholder="Enter Password" />
-                </div>
-                
-                <input type="submit"/>
-            </form>
-        </div>
+                      
+                  
+                    <input type="submit"/>
+                </form>
+            </div>
+        </div>    
     )
 }

@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { TfiAlignJustify } from "react-icons/tfi";
 import { IoHome } from "react-icons/io5";
 import { PiHandbagSimpleFill } from "react-icons/pi";
 import { FaPercent } from "react-icons/fa";
@@ -14,8 +15,13 @@ export default function ButtomNav(){
     }else{
         icanSize = 15
     }
+
+    function showmenu(){
+        alert("show menu")
+    }
    
     const theBtn = [
+        // {img: <TfiAlignJustify size={icanSize}/>,text: "Categries"},
         {img: <IoHome size={icanSize}/>,text: "Home"},
         {img: <PiHandbagSimpleFill size={icanSize}/>,text: "Livraison"},
         // {img: <FaPercent size={icanSize}/>,text: "Promotion"},
@@ -24,6 +30,9 @@ export default function ButtomNav(){
         {img: <RiCustomerService2Line size={icanSize}/>,text: "Besoin"},
     ]
     return(<div className="buttom-nav">
+        <button onClick={showmenu} className="btn-Nav-categories">
+            <TfiAlignJustify size={icanSize}/>Categries
+        </button>
         {theBtn.map((btn) =>  <Button key={btn.text} icon={btn.img}  text={btn.text} />)}
     </div>)
 }

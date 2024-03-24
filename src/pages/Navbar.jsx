@@ -3,6 +3,7 @@ import './../css/global.css'
 import './../css/navbar.css'
 import TopNav from "../components/navbar/TopNav";
 import ButtomNav from "../components/navbar/ButtomNav";
+import Footer from "../components/footer/Footer";
 
 export default function Navbar(){
     return (<div>
@@ -14,5 +15,6 @@ export default function Navbar(){
            </div>
            
             <div><Outlet/></div>
+            <Footer/>
     </div>)
 }

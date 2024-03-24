@@ -76,11 +76,11 @@ export const AuthProvider = ({children}) => {
 
 
     let contextData = {
-        user:user,
-        setUser:setUser,
-        authTokens:authTokens,
-        setAuthTokens:setAuthTokens,
-        loginUser:loginUser,
+        user,
+        setUser,
+        authTokens,
+        setAuthTokens,
+        loginUser,
         baseURL:baseURL,
         setBaseURL:setBaseURL,
         registerUser:registerUser,

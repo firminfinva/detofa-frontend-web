@@ -205,6 +205,31 @@ strong{
 .service-contact>div>span{
     font-size: 10px
 }
+footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    color: var(--button-text-color);
+    padding: 20px 0px;
+    background-color: var(--button-color);
+}
+.footer-title{
+    display: flex;
+    justify-content: center;
+    
+}
+.footer-media{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.footer-media>span{
+    padding: 5px 10px;
+    border: 1px solid var(--button-text-color);
+   
+}
 
 @media (max-width: 920px) {
     .homePage{
@@ -259,11 +284,15 @@ strong{
         gap: 15px;
     }
     .product-info>button{
+        font-size: 18px;
         height: 40px;
     }
     .service-box{
         height: auto;
         width: 100%;
+    }
+    .service-box>img{
+        height: 100%;
     }
     
     

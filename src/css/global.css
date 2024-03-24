@@ -2,5 +2,13 @@
     --button-color: #3498db;
     /* --button-color: #abdeff; */
     --button-text-color: #e1eaef;
-    --navbar-color : rgb(230, 230, 241); ;
-  }
+    --navbar-color : rgb(230, 230, 241); 
+    --footer-height: ;
+}
+*{
+ font-family: Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif; /* Example for headings using a serif font */
+}
