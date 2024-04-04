@@ -1,6 +1,6 @@
 import { jwtDecode } from 'jwt-decode';
 import React, { createContext, useState, useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { redirect } from 'react-router-dom';
 
 
 const AuthContext = createContext()
@@ -12,8 +12,8 @@ export const AuthProvider = ({children}) => {
     let [loading, setLoading] = useState(true)
     let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
     let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')) : null)
-    let [baseURL, setBaseURL] = useState("https://detofa-entreprise.onrender.com");
-    // let [baseURL, setBaseURL] = useState("http://127.0.0.1:8000");
+    // let [baseURL, setBaseURL] = useState("https://detofa-entreprise.onrender.com");
+    let [baseURL, setBaseURL] = useState("http://127.0.0.1:8000");
 
    
     // const navigate = useNavigate()
@@ -40,7 +40,7 @@ export const AuthProvider = ({children}) => {
     }
 
 
-    let registerUser = async (nom, email, phone, age, sexe, password, password2) => {
+    let registerUser = async (nom, email, phone, age, sexe, ville, password, password2) => {
         let response = await fetch(`${baseURL}/api/register/`, {
               method: "POST",
               headers: {
@@ -51,15 +51,17 @@ export const AuthProvider = ({children}) => {
                 email, 
                 phone, 
                 age, 
-                sexe, 
+                sexe,
+                ville, 
                 password, 
                 password2
               })
         })
-        console.log('this is the response', response.status)
+        // console.log('this is the response', response.status)
         if (response.status === 200) {
             // navigate("/login");
             alert("Welcome to Detofa")
+            return <redirect to="/login" />
         } else {
      
             alert("Something went wrong!");

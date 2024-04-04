@@ -14,17 +14,9 @@ export default function Login(){
             <div className="main_login">
                 <h1>Se connecter</h1>
                 <form className="login-form" onSubmit={loginUser}>
-                  
-                        {/* <div className="for-labels">
-                            <label>Téléphone</label>
-                            <label>Mot de passe</label>
-                        
-                        </div> */}
-              
                     <input type="text" name="phone" placeholder="Enter your phone number" />
                     <input type="password" name="password" placeholder="Enter Password" />
-                      
-                  
+                             
                     <input type="submit"/>
                 </form>
             </div>

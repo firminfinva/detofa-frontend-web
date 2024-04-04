@@ -27,31 +27,14 @@ export default function Registration(){
         { value: 'Kinshasa', label: 'Kinshasa' },
         { value: 'Lumbumbashi', label: 'Lumbumbashi' }
       ]
-      
-      const sexeOptions = [
-        { value: 'Homme', label: 'Homme' },
-        { value: 'Femme', label: 'Femme' },
-        { value: 'Non-binaire', label: 'Non-binaire' },
-        { value: 'Agender', label: 'Agender' },
-      ]
-
-    function handleSubmit2(data) {
-      data.ville=ville
-      data.sexe = sexe
-      registerUser(data.nom, data.email, data.phone, data.age, data.sexe, data.ville, data.password, password2)
+  
+    const handleSubmit2 = async e => {
+      e.preventDefault();
+      registerUser(nom, email, phone, age, sexe, ville, password, password2);
     };
-
-    const handleSelectChange = (event) => {
-      setVille(event.value)
-    };
-
-    const handleSelectChangeSex = (event) =>{
-      setSexe(event.value)
-    } 
-
     return(<div className="registration-page">
             <h1>Créer un compte</h1>
-            <form className="registration-form" onSubmit={handleSubmit((data) => handleSubmit2(data) )}>
+            <form className="registration-form" onSubmit={handleSubmit((data,event) => console.log("the data", data) )}>
                <input type="text" {...register("nom", {
                     required: "Ce champ est obligatoire",
                     minLength: {value: 3, message: "votre nom doit avoir au moins 3 caracteres"},
@@ -71,28 +54,17 @@ export default function Registration(){
                 id="phone"  placeholder="Votre numéro de téléphone" />
                 <ErrorMessage message={errors.phone?.message} />
 
-                <input type="date" {...register("age", {required: "Ce champ est obligatoire"})} id="age" placeholder="Votre age" required />
-                <ErrorMessage message={errors.age?.message} />
-
-                {/* <input type="text" {...register("sexe", {required: "Ce champ est obligatoire"})} id="sexe"  placeholder="Votre sexe" required />
-                <ErrorMessage message={errors.sexe?.message} /> */}
-
-                <Select onChange={handleSelectChangeSex}  className="input-type" options={sexeOptions} placeholder="sexe"/>
-
-                <Select onChange={handleSelectChange}  className="input-type" options={options} placeholder="Ville"/>
-               
-        
-                {/* <ErrorMessage message={errors} /> */}
+                <input type="date" {...register("date", {required: "Ce champ est obligatoire"})} id="age" placeholder="Votre age" required />
+                <ErrorMessage message={errors.date?.message} />
+                <input type="text" {...register("sexe", {required: "Ce champ est obligatoire"})} id="sexe"  placeholder="Votre sexe" required />
+                <ErrorMessage message={errors.sexe?.message} />
+                <Select id className="input-type" options={options} placeholder="Ville"/>
                 <input type="password" {...register("password", {
                     required: "Ce champ est obligatoire",
                     minLength: {value: 5, message: "votre password doit avoir au moins 5 caracteres"},
                 })}  id="password" onChange={e => setPassword(e.target.value)} placeholder="Mot de passe" required />
                 <ErrorMessage message={errors.password?.message} />
-                <input type="password" {...register("password2", {
-                    required: "Ce champ est obligatoire",
-                    minLength: {value: 5, message: "votre password doit avoir au moins 5 caracteres"},
-                })}
-                 id="confirm-password" onChange={e => setPassword2(e.target.value)} placeholder="Confirmer le mot de passe" required />
+                <input type="password" id="confirm-password" onChange={e => setPassword2(e.target.value)} placeholder="Confirmer le mot de passe" required />
                 
                 <p>{password2 !== password ? "Vos mots de passe sont différentsPasswords do not match" : ""}</p>
  
