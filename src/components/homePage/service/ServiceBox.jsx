@@ -1,28 +1,22 @@
 import ServiceImg from "./../../../assets/homePage3.png"
 
-export default function ServiceBox(){
+export default function ServiceBox({img, title, description, contact, realisation}){
     return (<div className="service-box">
-        <img src={ServiceImg} />
+        <img src={img} />
         <div className="service-box-content">
-                <span className="service-box-content-title">Nom  du service lorem adasdade</span>
+                <span className="service-box-content-title">{title}</span>
                 <hr />
-                <p>Detofa sublime vos événements privés et professionnels en proposant une expérience culinaire raffinée et un service 
-                attentionné. Notre équipe de chefs passionnés met tout en œuvre pour créer des menus uniques et savoureux, adaptés à vos 
-                goûts et à vos envies.</p>
+                <p>{description}</p>
                 <div className="service-realisation">
                     <h6>Nos réalisations</h6>
                     <div>
-                        <span>dfsdfs</span>
-                        <span>sdfsdf</span>
-                        <span>sdfsdfs</span>
+                        {realisation.map((item) => (<span> <strong className="service-realisation-title">{item.real}</strong>   : {item.value}</span>))}
                     </div>
                 </div>
                 <div className="service-contact">
                     <h6>Contact </h6>
                     <div>
-                        <span>finganduli@gmail.com</span>
-                        <span>+243 949 454 454</span>
-                        <span>+243 949 454 454</span>
+                        {contact?.map((item, index) => <span key={index}>{item}</span>)}
                     </div>
                 </div>
         </div>
