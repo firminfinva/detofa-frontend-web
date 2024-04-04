@@ -8,10 +8,10 @@ export default function Product(){
             <img src={ProductImg} />
         </div>
         <div className="product-info">
-            <h5 className="category">  <strong>Boutique :</strong>  customize's Boutique</h5>
+            <h5 className="category">  <strong style={{fontSize: "13px"}}>Boutique :</strong>  customize's Boutique</h5>
             <div>
                 <h6>
-                   <strong>Name :</strong>  Product name Product 
+                   <strong style={{fontSize: "13px"}}>Name :</strong>  Product name Product 
                 </h6>
                 <span>164100 fc</span>
             </div>

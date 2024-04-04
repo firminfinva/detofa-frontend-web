@@ -7,7 +7,11 @@
 :root {
     --home-image-size: clamp(7.5rem, 7.143rem + 1.786vw, 8.75rem);
   }
-
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .homePage{
     display: flex;
     justify-content: left;
@@ -79,14 +83,15 @@
     /* justify-content: space-evenly; */
     flex-wrap: wrap;
     box-sizing: border-box;
-    min-height: calc(50vh - 100px);
-    gap: 1%;
+    min-height: calc(55vh - 100px);
     
 }
 .product{
+    display: flex;
+    flex-direction: column;
     width: 24%;
     height: 330px;
-    margin-bottom: 50px;
+    margin: 10px 5px;
    
 }
 .product-img{
@@ -125,7 +130,7 @@ strong{
 }
 .category{
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 12px;
 }
 .product-info>button{
     border-radius: 5px;
