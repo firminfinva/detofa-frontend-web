@@ -1,0 +1,124 @@
+.single-product-description, .single-left-thumbal>img, .single-left-photo>img, .product-name, button, .product-price, .product-color{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+
+}
+.single-product-description, .product-name, button, .product-price, .product-color{
+    padding: 7px;
+}
+.singleproduct{
+    display: flex;
+    height: 100vh;
+    padding: 10px;
+    background-color:  var(--button-text-color);
+}
+.singleproduct>div{
+    width: 50%;
+    padding: 10px;
+}
+.single-left{
+    display: flex;
+    gap: 2%;
+}
+.single-left-thumbal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 15%;
+    height: 7vh;
+}
+.single-left-thumbal>img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.single-left-photo{
+    width: 85%;
+    border-radius: 3px;
+}
+.single-left-photo>img{
+    width: 100%;
+    height: 65vh;
+    border-radius: 3px;
+    object-fit: cover;
+}
+.singe-product-button{
+    margin-top: 5px
+}
+.singe-product-button>a>button{
+    padding: 10px 5px;
+    border-radius: 2px;
+}
+.singe-product-button>a>button:hover, img:hover{
+    border: 2px solid white;
+}
+.single-right{
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+.single-product-info{
+    display: flex;
+    gap: 20px;
+}
+.product-name{
+    font-style: italic;
+    font-size: 14px;
+}
+.product-price{
+    display: inline-block;
+    justify-content: space-between;
+    width: 230px;
+}
+.product-color{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 230px;
+}
+.product-color>div{
+    display: flex;
+    gap: 10px;
+    padding: 5px 2px;
+}
+.product-color>div>div{
+    height: 25px;
+    min-width: 25px;
+    font-size: 2px;
+}
+.quantity{
+    display: flex;
+    justify-content: space-between;
+}
+.quantity>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height: 30px;
+    border: 1px solid gray;
+}
+@media (max-width: 920px) {
+    .singleproduct{
+        flex-direction: column;
+    }
+    .singleproduct>div{
+        width: 100%;
+        padding: 1px;
+    }
+    .single-left-thumbal{
+        width: 20%;
+    }
+    .single-left-photo{
+        width: 80%;
+    }
+    .single-left-photo>img{
+        height: 40vh;
+    }
+    .single-right{
+        height: 50vh;
+    }
+    .single-product-info{
+        flex-direction: column;
+    }
+}

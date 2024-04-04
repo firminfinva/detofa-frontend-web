@@ -12,6 +12,7 @@ import Nouveaute from './pages/Nouveaute.jsx'
 import Services from './pages/Services.jsx'
 import Aide from './pages/Aide.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
+import SingleProduct from './pages/SingleProduct.jsx'
 // import { AuthProvider } from './context/AuthContext.jsx'
 
 let router = createBrowserRouter([
@@ -55,6 +56,10 @@ let router = createBrowserRouter([
         path: "/besoin",
         element: <Aide/>
       },
+      {
+        path: "/singleProduct",
+        element: <SingleProduct/>
+      }
     ]
   }
   
