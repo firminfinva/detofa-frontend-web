@@ -12,12 +12,9 @@ export const AuthProvider = ({children}) => {
     let [loading, setLoading] = useState(true)
     let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
     let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')) : null)
-    let [baseURL, setBaseURL] = useState();
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-        setBaseURL("http://127.0.0.1:8000")
-    } else {
-        setBaseURL("https://detofa-entreprise.onrender.com")
-    }
+    let [baseURL, setBaseURL] = useState("https://detofa-entreprise.onrender.com");
+    // let [baseURL, setBaseURL] = useState("http://127.0.0.1:8000");
+    
    
     // const navigate = useNavigate()
 
