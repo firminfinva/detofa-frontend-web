@@ -4,13 +4,19 @@ import AuthContext from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom"
 
 
-export default function Button({icon, text, onClick, type}){
+export default function Button({ icon, text, onClick, type }) {
     const navigate = useNavigate()
-    if(!onClick){
-        onClick = function goTothePage(){
-            navigate("/"+text)
+    if (!onClick) {
+        onClick = function goTothePage() {
+            navigate("/" + text)
         }
     }
-    
-    return(<button type={type} onClick={onClick} >{icon}{text}</button>)
+
+    return (
+        <button
+            type={type}
+            onClick={onClick}>
+            {icon}{text}
+        </button>
+    )
 }

@@ -9,65 +9,77 @@ import { IoMdCart } from "react-icons/io";
 
 
 
-export default function TopNav(){
-    const {authTokens, logoutUser} = useContext(AuthContext)
+export default function TopNav() {
+    const { authTokens, logoutUser } = useContext(AuthContext)
     const navigator = useNavigate()
     const [input, setInput] = useState("")
-    function goToHome(){
+    function goToHome() {
         navigator("/")
     }
-    function goToLogin(){
+    function goToLogin() {
         navigator("/login")
     }
-    function goToRegistration(){
+    function goToRegistration() {
         navigator("/registration")
     }
-    function handleChange(e){
+    function handleChange(e) {
         setInput(e.target.value)
     }
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
     }
     let icanSize = 0
-    if(window.innerWidth>920){
+    if (window.innerWidth > 920) {
         icanSize = 20
-    }else{
+    } else {
         icanSize = 15
     }
-   
+
     const theBtn = [
-        {img: <MdOutlineManageAccounts size={icanSize}/>,text: "Compte"},
-        {img: <IoMdCart size={icanSize}/>,text: "Panier"},
+        { img: <MdOutlineManageAccounts size={icanSize} />, text: "Compte" },
+        { img: <IoMdCart size={icanSize} />, text: "Panier" },
         // {img: <></>,text: "Deconnecter"},
     ]
-    return(
+    return (
         <div className="top-nav">
-            <img onClick={goToHome} className="logo" src={Logo} />
+            <img
+                onClick={goToHome}
+                className="logo"
+                src={Logo}
+            />
             <form>
-                <input value={input} onChange={handleChange} type="text" />
-                <Button onClick={handleSubmit} type="submit" icon={<CiSearch size="90%"/>}/>
+                <input
+                    value={input}
+                    onChange={handleChange}
+                    type="text"
+                />
+                <Button
+                    onClick={handleSubmit}
+                    type="submit" 
+                    icon={<CiSearch size={"90%"} />}
+                />
             </form>
             <div className="connexion-btns">
-                {!authTokens ?<>
-                <Button onClick={goToLogin} text="Login"/>
-                <Button onClick={goToRegistration} text="Registration"/>
-                </>:
-                <>
-                    {theBtn.map((btn)=>
-                        <Link to={btn.text} className="connected-btns">
-                            <div>{btn.img}</div>
-                            <Button  key={btn.text}  text={btn.text} />
-                        </Link>
-                    )}
-                    <div className="deconnected-btns">
-                        <div><></></div>
-                        <button className="logout" onClick={()=> logoutUser()}>Deconnexion</button>
-                    </div>
-                </>
+                {!authTokens ? <>
+                    <Button onClick={goToLogin} text="Login" />
+                    <Button onClick={goToRegistration} text="Registration" />
+                </> :
+                    <>
+                        {theBtn.map((btn) =>
+                            <Link to={btn.text} className="connected-btns">
+                                <div>{btn.img}</div>
+                                <Button key={btn.text} text={btn.text} />
+                            </Link>
+                        )}
+                        <div className="deconnected-btns">
+                            <div><></></div>
+                            <button className="logout" onClick={() => logoutUser()}>Deconnexion</button>
+                        </div>
+                    </>
                 }
-                       
-             </div>
-                    
+
+            </div>
+
         </div>
     )
 }

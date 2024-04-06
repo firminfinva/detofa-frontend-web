@@ -1,67 +1,109 @@
-nav{
+button {
+    cursor: pointer;
+    /* height: 40px; */
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+nav {
     position: fixed;
     width: 100vw;
     z-index: 3;
 }
-.navbar{
+
+.navbar {
     height: 100px;
     z-index: 3;
 }
-.top-nav{
-    height: 70px;   
+
+.top-nav {
+    height: 70px;
     display: flex;
     background-color: var(--navbar-color);
     justify-content: space-evenly;
     align-items: center;
-    
+
+    img {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
-.logo{
+
+.logo {
     height: clamp(2rem, 1.429rem + 2.857vw, 4rem);
     object-fit: cover;
 }
-.top-nav>form{
+
+.top-nav>form {
     width: 50%;
-    height: 40px; 
+    height: 40px;
     overflow-y: hidden;
     background-color: white;
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
 }
-input{
+
+input {
     height: 100%;
     flex-grow: 2;
     border: none;
     border-radius: 15px;
 }
+
 input[type=text]:focus {
     border: none;
     /* border-top: 1px solid rgb(230, 230, 241); */
 }
-.top-nav>form>button{
+
+.top-nav>form>button {
     height: 100%;
     min-width: 40px;
 
 }
-.connexion-btns{
+
+.top-nav>form {}
+
+.top-nav>form input {
+    outline: none;
+    background: transparent;
+    padding: 5px 25px;
+    font: inherit;
+    color: #777;
+}
+
+button {
+    cursor: hover;
+}
+
+.connexion-btns {
     display: flex;
     gap: 5px;
 }
-.connexion-btns>button{
+
+.connexion-btns>button {
     display: flex;
     height: 40px;
     width: 100px;
     padding: 0 10px;
 }
-.connected-btns>div{
+
+.connected-btns>div {
     height: 20px;
     padding-left: 25px;
 }
-.deconnected-btns>div{
+
+.deconnected-btns>div {
     height: 15px;
     padding-left: 25px;
 }
-.connected-btns>button{
+
+.connected-btns>button {
     font-weight: 900;
     min-width: 50px;
     background-color: var(--button-text-color);
@@ -69,56 +111,102 @@ input[type=text]:focus {
 }
 
 
-.buttom-nav{
+.buttom-nav {
     display: flex;
     justify-content: space-between;
-    height: 30px; 
+    height: 30px;
     gap: 1px;
     background-color: var(--button-text-color);
 }
-.buttom-nav>button{
+
+.buttom-nav>button {
     flex-grow: 2;
     border-radius: 0;
     background-color: var(--button-color);
     font-weight: 900;
 }
-.logout{
+
+.logout {
     background-color: rgb(250, 44, 44);
     border: 1px solid white;
 }
+
+/* media query for tablet */
+
 @media (max-width: 920px) {
-    .navbar{
+    /* .navbar {
         height: 105px;
-    }
-    .top-nav{
+    } */
+
+    /* .top-nav {
         height: 75px;
-    }
-    .top-nav>form{
+    } */
+
+    .top-nav>form {
         width: 40%;
-        height: 30px; 
-        overflow-y: hidden;
+        height: 30px;
+        /* overflow-y: hidden; */
         background-color: white;
         display: flex;
         justify-content: space-between;
-        border-radius: 15px;
+        /* border-radius: 15px; */
     }
-    input{
+
+    input {
         height: 100%;
         width: 10%;
         flex-grow: 1;
     }
-    .top-nav>form>button{
+
+    .top-nav>form>button {
         height: 100%;
         min-width: 30px;
-    
     }
-    .connexion-btns>button{
-        font-size: 8px;
+
+    .connexion-btns>button {
+        font-size: 12px;
+    }
+
+    .buttom-nav {
         height: 30px;
-        width: 50px;
-        padding: 0 5px;
     }
-    .buttom-nav{
-        height: 30px; 
+}
+
+
+/* for smallest phone */
+
+@media (max-width: 640px) {
+    /* .buttom-nav :nth-child(3) {
+        display: none;
+    } */
+    .top-nav > form {
+        display: none;
     }
- }
+    .top-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .connexion-btns {
+        button {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
+
+/* for smallest phone */
+
+@media (max-width: 400px) {
+    .connexion-btns {
+        button {
+            height: 32px;
+            font-size: 12px;
+            width: 78px;
+            border-radius: 8px;
+            padding: 0;
+        }
+    }
+}
