@@ -3,6 +3,7 @@ import ServiceImg from "./../../assets/homePage3.png"
 const serviceTab = [
     {
         serviceName:"Vente en ligne",
+        serviceurl: "",
         image: "/homePage1.png",
         description: "Découvrez notre service de vente en ligne pour une expérience shopping pratique. Profitez du marketing relationnel, parcourez notre catalogue varié et explorez la simplicité du shopping depuis chez vous.",
         realisation: [
@@ -12,6 +13,7 @@ const serviceTab = [
     },
     {
         serviceName:"Service traiteur",
+        serviceurl: "",
         image:  "/homePage4.png",
         description: "Detofa sublime vos événements privés et professionnels en proposant une expérience culinaire raffinée et un service attentionné. Notre équipe de chefs passionnés met tout en œuvre pour créer des menus uniques et savoureux, adaptés à vos goûts et à vos envies.",
         realisation: [
@@ -23,6 +25,7 @@ const serviceTab = [
     },
     {
         serviceName:"Développement web et mobile",
+        serviceurl: "",
         image: "/homePage2.png",
         description: "Detofa offre une solution web et mobile complète pour concrétiser vos projets digitaux avec succès. Notre équipe expérimentée allie expertise technique et créativité pour des solutions sur mesure répondant parfaitement à vos besoins et à ceux de votre audience.",
         realisation: [
@@ -32,6 +35,7 @@ const serviceTab = [
     },
     {
         serviceName:"Service protocole",
+        serviceurl: "serviceprotocole",
         image: "/homePage3.png",
         description: "Detofa service protocole, une planification minutieuse pour un jour inoubliable. Chaque détail est orchestré avec soin pour créer des souvenirs durables. Un service dévoué pour faire de votre mariage un moment magique",
         realisation: [
@@ -46,11 +50,6 @@ export default function Services(){
             <h1>Nos services</h1>
             {serviceTab.map((service) => <ServiceBox title={service.serviceName}
              img={service.image} description={service.description} contact={service.contact}
-             realisation={service.realisation} />)}
-            
-            {/* <ServiceBox/>
-            <ServiceBox/>
-            <ServiceBox/> */}
-            
+             realisation={service.realisation} serviceurl={service.serviceurl} />)}          
     </div>)
 }

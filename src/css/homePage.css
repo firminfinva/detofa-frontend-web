@@ -183,6 +183,9 @@ strong{
     gap: 5px;
     padding: 15px;
 }
+.service-box-content>a{
+    width: 100%;
+}
 .service-box-content-title{
     font-weight: 900;
     font-size: 16px;
@@ -302,12 +305,17 @@ footer{
         height: 40px;
     }
     .service-box{
+        margin-top: 10px;
+        flex-direction: column;
         height: auto;
         width: 100%;
     }
     .service-box>img{
         height: 100%;
+        width: 100%;
+
     }
+   
     
     
  }

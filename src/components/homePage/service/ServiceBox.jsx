@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"
 import ServiceImg from "./../../../assets/homePage3.png"
 
-export default function ServiceBox({img, title, description, contact, realisation}){
+export default function ServiceBox({img, title, description, contact, realisation, serviceurl}){
     return (<div className="service-box">
         <img src={img} />
         <div className="service-box-content">
-                <span className="service-box-content-title">{title}</span>
+                {serviceurl.length>0 ? <Link to="/serviceprotocole"><span className="service-box-content-title">{title}</span></Link>  :
+                <span className="service-box-content-title">{title}</span>}
                 <hr />
                 <p>{description}</p>
                 <div className="service-realisation">
